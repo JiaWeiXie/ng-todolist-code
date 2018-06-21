@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+body {
+  font-family: 'Noto Sans TC';
+  margin: 0;
+}

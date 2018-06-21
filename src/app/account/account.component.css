@@ -1,0 +1,14 @@
+.account-view {
+  background: url('/assets/images/board-bg.jpg') no-repeat fixed center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  color: #ffffff;
+}

@@ -1,0 +1,41 @@
+<p-dialog header="新增卡片" [(visible)]="dialogVisible" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70"
+        [baseZIndex]="10000">
+        <div class="content-section implementation">
+            <div class="ui-md-12"><h3 class="first">標題</h3></div>
+
+            <div class="ui-md-12">
+                <input id="input" size="25" type="text" pInputText [(ngModel)]="dialogTitle">
+            </div>
+            <div class="ui-md-12"><h3 class="first">內容</h3></div>
+            <div class="ui-md-12">
+                <textarea rows="5" [cols]="25" autoResize="autoResize" pInputTextarea [(ngModel)]="dialogContent"></textarea>
+            </div>
+
+        </div>
+
+        <p-footer>
+            <button type="button" pButton icon="pi pi-check" (click)="dialogOK()" label="新增"></button>
+            <button type="button" pButton icon="pi pi-close" (click)="dialogVisible=false" label="取消"></button>
+        </p-footer>
+</p-dialog>
+
+
+<div class="ui-g-12 ui-md-6 ui-lg-4" pDroppable="cardItems" (onDrop)="drop($event)">
+  <p-panel>
+      <p-header>
+          <div class="ui-helper-clearfix">
+              <h3 ui-panel-title>{{title}}</h3>
+              <button pButton type="button" icon="pi pi-plus" class="edit-bt" (click)="showDialog()"></button>
+          </div>
+      </p-header>
+      <div *ngFor="let item of carItems; let i = index" pDraggable="cardItems" (onDragStart)="dragStart($event,i)" (onDragEnd)="dragEnd($event)">
+        <div >
+            <p-card title="{{item.title}}" [style]="{'margin-top': '6px'}" styleClass="ui-card-shadow">
+                <div class="edit-bt card-bt"><button pButton type="button" icon="pi pi-times" class="ui-button-warning" (click)="deleteCard($event, i)"></button></div>
+                <div>{{item.content}}</div>
+            </p-card>
+        </div>
+
+      </div>
+  </p-panel>
+</div>

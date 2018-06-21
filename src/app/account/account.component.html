@@ -1,0 +1,23 @@
+<div class="ui-g ui-fluid account-view">
+  <form class="ui-g-12 ui-md-4" [formGroup]='accountForm' (ngSubmit)="createToDoLisit(accountForm)">
+    <h1>新的代辦事項</h1>
+    <span class="ui-float-label">
+      <input id="float-input" type="text" formControlName='usernameForm' pInputText>
+      <label for="float-input">使用者名稱</label>
+    </span>
+    <div *ngIf="accountForm.controls['usernameForm'].touched && !accountForm.controls['usernameForm'].valid">
+      <span *ngIf="accountForm.controls['usernameForm'].hasError('required') ">
+          使用者名稱是必要欄位！
+      </span>
+      <span *ngIf="accountForm.controls['usernameForm'].hasError('minlength')">
+          使用者名稱最少 1 個字
+      </span>
+      <span *ngIf="accountForm.controls['usernameForm'].hasError('maxlength')">
+          使用者名稱最多 15 個字
+      </span>
+    </div>
+    <br/>
+    <button pButton type="submit" label="建立" [disabled]='!accountForm.valid'></button>
+  </form>
+
+</div>
