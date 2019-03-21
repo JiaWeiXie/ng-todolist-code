@@ -1,5 +1,5 @@
 .account-view {
-  background: url('/assets/images/board-bg.jpg') no-repeat fixed center;
+  background: url('../../assets/images/board-bg.jpg') no-repeat fixed center;
   background-size: cover;
   display: flex;
   align-items: center;

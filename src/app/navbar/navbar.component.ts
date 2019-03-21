@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
   logout(event: any) {
     localStorage.clear();
     localStorage.setItem('isReload', 'true');
-    this.router.navigate(['/account']);
+    this.router.navigate(['/']);
   }
 
 }

@@ -12,9 +12,9 @@ const routes: Routes = [
   },
   { path: '**', component: AccountComponent }
 ];
-
+// , { useHash: true }
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
